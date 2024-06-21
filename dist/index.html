@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src ="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--Google Fonts links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
+    <title>The Odin weather</title>
+</head>
+<body>
+    <header>
+        
+        <img alt="logo" src="../assests/odin-lined.png" class="image_logo"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"/>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Welcome Back</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="mb-3">
+                    <label  class="form-label">
+                        Please enter a country name 
+                        <input type="text" id="country-name" placeholder="Tunis" class="form-control" autocomplete="country-name">
+                    </label>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3" onclick="getWeather()">Discover weather</button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!--Begin : main content-->
+    <div class="weather">
+        <!--This section will contain :
+            Completed  
+        -->
+        <img id="weather-icon" src="" alt="Weather Icon">
+        <p id="temperature"></p>
+        <p id="description"></p>
+    </div>
+
+
+    <div class="stats" >
+        <!--
+            this section will contain :
+                humidity
+                wind_kph
+                cloud
+                wind direction
+                wind degree
+                pressure
+
+                Optional :
+                feels_like
+                heatindex_c
+        -->
+        <div class="humidity">
+            <p id="humidity"></p>
+        </div>
+        <div class="wind_direction">
+            <p id="wind_direction"></p>
+        </div>
+        <div class="wind_degree">
+            <p id="wind_degree"></p>
+        </div>
+        <div class="pressure">
+            <p id="pressure"></p>
+        </div>
+        <div class="cloud">
+            <p id="cloud"></p>
+        </div>
+    </div>
+
+    
+
+    <div class="dateAndCity">
+        <!--This section will contain :
+           Completed
+        -->
+        <div class="dateHour">
+            <p id="localtime"></p>
+        </div>
+        <div class="cityCountry">
+            <p id="region"></p>
+        </div>
+        <div class="continent">
+            <p id="continent"></p>
+        </div>
+    </div>
+    <!--End : main content  -->
+
+    <footer>
+        <p class="footer_text">Made with love <i class="fa fa-heart"></i> by Chaabane2k03</p>
+        <!--Adding a button that refers to msg in bootstrap-->
+        <button type="button" class="btn btn-danger" id="liveToastBtn">View my other projects</button>
+        <div class="position-fixed top-0 start-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <i class="fa fa-github"></i>
+                    <strong class="me-auto">The Odin Weather App</strong>
+                    <small>Just Now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Please visit our GitHub page :
+                    <a href="https://github.com/Chaabane2k03">Chaabane2k03</a>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="../src/footer.js"></script>
+        <script src="../src/index.js"></script>
+    </footer>
+</body>
+</html>
